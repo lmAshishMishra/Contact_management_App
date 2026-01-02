@@ -3,7 +3,7 @@ Create and enter the root directory
 mkdir contact-app-project
 cd contact-app-
 ##
-creted gitignore in root directory
+created gitignore in root directory
  ## for frontend
 
  
