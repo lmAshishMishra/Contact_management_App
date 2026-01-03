@@ -1,0 +1,71 @@
+.list-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1.5px solid #e2e8f0;
+    width: 60%;
+    outline: none;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 0.8fr;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 0.8fr;
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    align-items: center;
+    font-size: 13.5px;
+}
+
+.cat-tag {
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    width: fit-content;
+    font-weight: 600;
+}
+
+.delete-btn {
+    color: #e11d48;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* Mobile: Adjust grid to 3 columns to prevent squishing */
+@media (max-width: 600px) {
+    .table-header, .table-row {
+        grid-template-columns: 1.5fr 1fr 0.8fr;
+    }
+    .table-header b:nth-child(3), 
+    .table-row p:nth-child(3) {
+        display: none; /* Hide Category on tiny screens */
+    }
+}
+

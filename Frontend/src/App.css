@@ -1,7 +1,47 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+/* Layout Organization */
+.main-container {
+  width: 95%;
+  max-width: 1300px;
+  margin: 30px auto;
 }
 
+.dashboard-grid {
+  display: flex;
+  flex-direction: row; /* Desktop: side-by-side */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.form-container {
+  flex: 1; /* Takes roughly 40% */
+  position: sticky;
+  top: 20px;
+}
+
+.list-container {
+  flex: 1.5; /* Takes roughly 60% */
+}
+
+/* RESPONSIVE: Stacks vertically on mobile/tablets */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    flex-direction: column; /* Stacks form on top of list */
+    gap: 20px;
+  }
+
+  .form-container {
+    position: static;
+    width: 100%;
+  }
+
+  .list-container {
+    width: 100%;
+  }
+}
+
+.single-view {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}

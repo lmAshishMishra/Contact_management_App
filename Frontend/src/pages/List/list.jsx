@@ -8,33 +8,40 @@ const List = () => {
     const { url, contactList, fetchList } = useContext(StoreContext);
     const [search, setSearch] = useState("");
 
-    const removeContact = async (id) => {
+    const deleteContact = async (id) => {
         const response = await axios.post(`${url}/api/contact/remove`, { id });
         if (response.data.success) {
-            toast.success("Contact Removed");
-            await fetchList(); // Instantly refresh the table
+            toast.error("Contact Deleted");
+            fetchList();
         }
     };
 
+    const filteredList = contactList.filter(item => 
+        item.name.toLowerCase().includes(search.toLowerCase())
+    );
+
     return (
-        <div className='list-page'>
+        <div className='list-card'>
             <div className='list-header'>
-                <h2>All Contacts</h2>
-                <input type="text" placeholder="Search contacts..." onChange={(e) => setSearch(e.target.value)} />
+                <h3>Contacts ({filteredList.length})</h3>
+                <input 
+                    type="text" 
+                    placeholder="Search by name..." 
+                    onChange={(e) => setSearch(e.target.value)} 
+                    className='search-bar'
+                />
             </div>
 
-            <div className='list-table'>
-                <div className="list-table-format title">
-                    <b>Name</b><b>Email</b><b>Phone</b><b>Category</b><b>Action</b>
+            <div className='table-container'>
+                <div className='table-header'>
+                    <b>Name</b><b>Phone</b><b>Category</b><b>Action</b>
                 </div>
-
-                {contactList.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map((item, index) => (
-                    <div key={index} className="list-table-format">
+                {filteredList.map((item, index) => (
+                    <div key={index} className='table-row'>
                         <p>{item.name}</p>
-                        <p>{item.email}</p>
                         <p>{item.phone}</p>
-                        <p>{item.category}</p>
-                        <p onClick={() => removeContact(item._id)} className='cursor delete'>X</p>
+                        <p className='cat-tag'>{item.category}</p>
+                        <p onClick={() => deleteContact(item._id)} className='delete-btn'>Delete</p>
                     </div>
                 ))}
             </div>

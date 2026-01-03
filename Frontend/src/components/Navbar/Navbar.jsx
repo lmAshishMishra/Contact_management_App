@@ -1,15 +1,26 @@
 import React from 'react'
 import './Navbar.css'
-import {Link} from 'react-router-dom'
+import { NavLink } from 'react-router-dom' // NavLink is better for navbars
+
 const Navbar = () => {
   return (
-   <nav className='navbar'>
-        <h1>ContactManager</h1>
-        <ul>
-          <Link to='/'>List</Link>
-          <Link to='/add'>Add New</Link>
-        </ul>
-      </nav>
+    <nav className='navbar'>
+      <h1 className='logo'>ContactManager</h1>
+      <ul className='nav-links'>
+          <li>
+          <NavLink to='/' className={({isActive}) => isActive ? "active" : ""}>Home</NavLink>
+        </li>
+       
+        <li>
+          <NavLink to='/add' className={({isActive}) => isActive ? "active" : ""}>Add New</NavLink>
+        </li>
+        
+         <li>
+          <NavLink to='/list' className={({isActive}) => isActive ? "active" : ""}>List</NavLink>
+        </li>
+
+      </ul>
+    </nav>
   )
 }
 
