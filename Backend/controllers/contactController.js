@@ -18,8 +18,7 @@ const addContact = async (req, res) => {
     }
 };
 
-//    Get all contacts
-//    GET /api/contact/list
+//get list item
 const listContacts = async (req, res) => {
     try {
         const contacts = await contactModel.find({}).sort({ createdAt: -1 }); // Newest first
@@ -30,20 +29,18 @@ const listContacts = async (req, res) => {
     }
 };
 
-// @desc    Remove contact (Bonus Task)
-// @route   POST /api/contact/remove
 
+// Delete list  item
 const removeContact = async (req, res) => {
     try {
         const { id } = req.body;
         
-        // 1. Debugging: Log the ID to see if it's actually reaching the backend
+        
         console.log("Attempting to delete ID:", id);
 
-        // 2. Perform the delete and store the result
         const deletedContact = await contactModel.findByIdAndDelete(id);
 
-        // 3. Check if something was actually found and deleted
+       
         if (!deletedContact) {
             return res.json({ success: false, message: "Contact not found in DB" });
         }
