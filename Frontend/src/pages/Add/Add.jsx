@@ -29,7 +29,7 @@ const Add = () => {
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
-        const response = await axios.post(`${url}/api/contact/add`, data);
+        const response = await axios.post(`${url}/api/contacttoash/add`, data);
         if (response.data.success) {
             toast.success("Added Successfully!");
             setData({ name: "", email: "", phone: "", category: "General", message: "" });

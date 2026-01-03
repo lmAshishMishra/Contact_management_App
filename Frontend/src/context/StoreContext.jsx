@@ -10,7 +10,7 @@ const StoreContextProvider = (props) => {
     // Logic to fetch all contacts from DB
     const fetchList = async () => {
         try {
-            const response = await axios.get(`${url}/api/contact/list`);
+            const response = await axios.get(`${url}/api/contacttoash/list`);
             if (response.data.success) {
                 setContactList(response.data.data);
             }

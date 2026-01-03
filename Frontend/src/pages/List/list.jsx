@@ -9,7 +9,7 @@ const List = () => {
     const [search, setSearch] = useState("");
 
     const deleteContact = async (id) => {
-        const response = await axios.post(`${url}/api/contact/remove`, { id });
+        const response = await axios.post(`${url}/api/contacttoash/remove`, { id });
         if (response.data.success) {
             toast.error("Contact Deleted");
             fetchList();

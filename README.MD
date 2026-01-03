@@ -11,3 +11,18 @@ npm create vite@latest frontend
  Install the necessary packages for your features
 npm install
 npm install axios react-router-dom
+
+
+
+### Backend 
+
+
+do npm install
+database is mongo db 
+odm is mongoose 
+
+
+some importent dependecy
+
+
+start server npm dev run
