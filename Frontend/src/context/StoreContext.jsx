@@ -4,7 +4,7 @@ import axios from "axios";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-    const url = "http://localhost:4000"; // Your Backend URL
+    const url = "https://contact-management-ap-backend.onrender.com"; // Your Backend URL
     const [contactList, setContactList] = useState([]);
 
     // Logic to fetch all contacts from DB
