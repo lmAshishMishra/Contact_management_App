@@ -7,15 +7,17 @@ const Navbar = () => {
     <nav className='navbar'>
       <h1 className='logo'>ContactManager</h1>
       <ul className='nav-links'>
-          <li>
+          <li className='a'>
           <NavLink to='/' className={({isActive}) => isActive ? "active" : ""}>Home</NavLink>
         </li>
        
-        <li>
+        <li className='b' >
+    
+        
           <NavLink to='/add' className={({isActive}) => isActive ? "active" : ""}>Add New</NavLink>
         </li>
         
-         <li>
+         <li className='c' >
           <NavLink to='/list' className={({isActive}) => isActive ? "active" : ""}>List</NavLink>
         </li>
 

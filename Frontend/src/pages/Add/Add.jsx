@@ -18,6 +18,7 @@ const Add = () => {
     };
 
     const onChangeHandler = (event) => {
+
         const { name, value } = event.target;
         setData(prev => ({ ...prev, [name]: value }));
         validate(name, value);
@@ -58,6 +59,16 @@ const Add = () => {
                     <label>Phone</label>
                     <input name="phone" onChange={onChangeHandler} value={data.phone} type="text" placeholder="10 Digits" />
                     {errors.phone && <span className='error'>{errors.phone}</span>}
+                </div>
+
+                 <div className="input-box">
+                    <label>Category</label>
+                   <select name="category" id="car-select" onChange={onChangeHandler} >
+    <option value="General">General</option>
+    <option value="VIP">VIP</option>
+    <option value="Office">Office</option>
+    <option value="Relative">Relative</option>
+</select>
                 </div>
 
                 <div className="input-box">

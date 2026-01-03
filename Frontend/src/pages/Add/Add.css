@@ -1,5 +1,5 @@
 .add-card {
-    background: #837e7e;
+    background: #e8cfcf;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -33,13 +33,14 @@
     font-size: x-large;
 }
 
-.input-box input, 
+.input-box input, .input-box select,
 .input-box textarea {
     padding: 10px 15px;
     border: 1.5px solid #e2e8f0;
     border-radius: 8px;
     outline: none;
     transition: 0.3s;
+    text-align: center;
 }
 
 .input-box input:focus, 
@@ -54,8 +55,17 @@
 
 .error {
     color: #e11d48;
-    font-size: 11px;
+    font-size: 18px;
     margin-top: 2px;
+    height: 70px;
+    width: 200px;
+    border-radius: 25px;
+    background-color: #0b0c0e;
+    text-align: center;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .submit-btn {

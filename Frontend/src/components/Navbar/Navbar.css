@@ -4,28 +4,34 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background: white;
+  background: rgb(255, 253, 253);
+  margin-top: 0px;
 }
 
 .logo {
   color: #ff4c24;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 2.0rem;
 }
 
-.nav-links {
+ .nav-links {
   display: flex;
   gap: 30px;
   list-style: none;
+
+  
 }
 
-.nav-links a {
+.nav-links a{
+  font-size: xx-large;
   text-decoration: none;
-  color: #4b5563;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: 0.3s;
+  font-weight: bold;
+ 
+
 }
+
+
+
 
 .nav-links a:hover, .nav-links a.active {
   color: #ff4c24;

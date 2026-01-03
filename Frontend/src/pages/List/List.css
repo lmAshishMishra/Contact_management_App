@@ -1,5 +1,5 @@
 .list-card {
-    background: #fff;
+    background: #e8cfcf;
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -38,6 +38,10 @@
     align-items: center;
     font-size: 13.5px;
 }
+.table-row p {
+    font-size: larger;
+    font-weight: bold;
+}
 
 .cat-tag {
     background: #f1f5f9;
@@ -49,9 +53,10 @@
 }
 
 .delete-btn {
-    color: #e11d48;
+    color: #101110;
     cursor: pointer;
     font-weight: 600;
+   
 }
 
 .delete-btn:hover {
@@ -69,3 +74,36 @@
     }
 }
 
+
+
+/* 1. The Wrapper */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Optional: limits search bar width */
+}
+
+/* 2. The Icon Position */
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    font-size: 20px;
+}
+
+/* 3. The Input Padding */
+.search-bar {
+    width: 100%;
+    padding: 10px 10px 10px 35px; /* Extra left padding (35px) to make room for icon */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-bar:focus {
+    border-color: #ff6347; /* Tomato color to match typical MERN themes */
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.2);
+}
